@@ -61,7 +61,7 @@ public class Tab1 extends Activity {
 						if(media1.isPlaying())
 							media1.stop();
 						media1.setAudioStreamType(AudioManager.USE_DEFAULT_STREAM_TYPE);
-						media1.setDataSource("http://abnarabic-live.hls.adaptive.level3.net/hls-live/abnarabic-live/_definst_/live.m3u8");
+						media1.setDataSource("http://live.abnsat.com/arabic.m3u8");
 						media1.prepare();
 						media1.start();
 						Toast.makeText(getApplicationContext(), "Playing...",
@@ -86,7 +86,7 @@ public class Tab1 extends Activity {
 						if(media3.isPlaying())
 							media3.stop();
 						media3.setAudioStreamType(AudioManager.USE_DEFAULT_STREAM_TYPE);
-						media3.setDataSource("http://abnenglish-live.hls.adaptive.level3.net/hls-live/abnenglish-live/_definst_/live.m3u8");
+						media3.setDataSource("http://live.abnsat.com/trinity.m3u8");
 						media3.prepare();
 						media3.start();
 						Toast.makeText(getApplicationContext(), "Playing...",
@@ -112,7 +112,7 @@ public class Tab1 extends Activity {
 							media5.stop();
 						media5.stop();
 						media5.setAudioStreamType(AudioManager.USE_DEFAULT_STREAM_TYPE);
-						media5.setDataSource("http://abnworshipchannel-live.hls.adaptive.level3.net/hls-live/abnworshipchannel-live/_definst_/live.m3u8");
+						media5.setDataSource("http://live.abnsat.com/worship.m3u8");
 						media5.prepare();
 						media5.start();
 						Toast.makeText(getApplicationContext(), "Playing...",
@@ -137,7 +137,7 @@ public class Tab1 extends Activity {
 						if(media7.isPlaying())
 							media7.stop();
 						media7.setAudioStreamType(AudioManager.USE_DEFAULT_STREAM_TYPE);
-						media7.setDataSource("http://surath.abnsat.com/surath/live.m3u8");
+						media7.setDataSource("http://live.abnsat.com/surath.m3u8");
 						media7.prepare();
 						media7.start();
 						Toast.makeText(getApplicationContext(), "Playing...",
@@ -163,7 +163,7 @@ public class Tab1 extends Activity {
 						if(media9.isPlaying())
 							media9.stop();
 						media9.setAudioStreamType(AudioManager.USE_DEFAULT_STREAM_TYPE);
-						media9.setDataSource("http://surath.abnsat.com/surath/live.m3u8");
+						media9.setDataSource("http://live.abnsat.com/kurdish.m3u8");
 						media9.prepare();
 						media9.start();
 						Toast.makeText(getApplicationContext(), "Playing...",
@@ -190,7 +190,7 @@ public class Tab1 extends Activity {
 						if(media11.isPlaying())
 							media11.stop();
 						media11.setAudioStreamType(AudioManager.USE_DEFAULT_STREAM_TYPE);
-						media11.setDataSource("http://surath.abnsat.com/surath/live.m3u8");
+						media11.setDataSource("http://live.abnsat.com/alquddoos.m3u8");
 						media11.prepare();
 						media11.start();
 						Toast.makeText(getApplicationContext(), "Playing...",
@@ -213,7 +213,7 @@ public class Tab1 extends Activity {
 							PlayVideoDemo.class);
 					inte.putExtra(
 							"play",
-							"http://abnarabic-live.hls.adaptive.level3.net/hls-live/abnarabic-live/_definst_/live.m3u8");
+							"http://live.abnsat.com/arabic.m3u8");
 					inte.putExtra(
 							"name",
 							"Arabic Stream");
@@ -236,7 +236,7 @@ public class Tab1 extends Activity {
 							PlayVideo.class);
 					inte.putExtra(
 							"play",
-							"http://abnenglish-live.hls.adaptive.level3.net/hls-live/abnenglish-live/_definst_/live.m3u8");
+							"http://live.abnsat.com/trinity.m3u8");
 					inte.putExtra(
 							"name",
 							"English Stream");
@@ -257,7 +257,7 @@ public class Tab1 extends Activity {
 							PlayVideo.class);
 					inte.putExtra(
 							"play",
-							"http://abnworshipchannel-live.hls.adaptive.level3.net/hls-live/abnworshipchannel-live/_definst_/live.m3u8");
+							"http://live.abnsat.com/worship.m3u8");
 					inte.putExtra(
 							"name",
 							"Worship Stream");
@@ -276,10 +276,10 @@ public class Tab1 extends Activity {
 					Intent inte = new Intent(getApplicationContext(),
 							PlayVideo.class);
 					inte.putExtra("play",
-							"http://surath.abnsat.com/surath/live.m3u8");
+							"http://live.abnsat.com/surath.m3u8");
 					inte.putExtra(
 							"name",
-							"Kurdish Stream");
+							"Surath Stream");
 					startActivity(inte);
 				} else {
 					Toast.makeText(getApplicationContext(),
@@ -297,10 +297,10 @@ public class Tab1 extends Activity {
 					Intent inte = new Intent(getApplicationContext(),
 							PlayVideo.class);
 					inte.putExtra("play",
-							"http://kurdish.abnsat.com/kurdish/live.m3u8");
+							"http://live.abnsat.com/kurdish.m3u8");
 					inte.putExtra(
 							"name",
-							"Alquddus Stream");
+							"Kurdish Stream");
 					startActivity(inte);
 				} else {
 					Toast.makeText(getApplicationContext(),
@@ -317,7 +317,9 @@ public class Tab1 extends Activity {
 					Intent inte = new Intent(getApplicationContext(),
 							PlayVideo.class);
 					inte.putExtra("play",
-							"http://alquddoos.abnsat.com/alquddoos/live.m3u8");
+							"http://live.abnsat.com/alquddoos.m3u8");
+					inte.putExtra("name",
+							"Al Quddoos Stream");
 					startActivity(inte);
 				} else {
 					Toast.makeText(getApplicationContext(),
