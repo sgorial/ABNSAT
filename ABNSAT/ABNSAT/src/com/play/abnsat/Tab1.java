@@ -21,321 +21,80 @@ public class Tab1 extends Activity {
 
 	VideoView videoView1;
 
-	ImageView one, three, five;
-	ImageView two, four, six;
-
-	ImageView seven, eight, nine;
-	ImageView ten, eleven, twelve;
-
-	MediaPlayer media1 = new MediaPlayer(); 
-	MediaPlayer media3 = new MediaPlayer();
-	MediaPlayer media5 = new MediaPlayer();
-	MediaPlayer media7 = new MediaPlayer();
-	MediaPlayer media9 = new MediaPlayer(); 
-	MediaPlayer media11 = new MediaPlayer();
+	ImageView arabicPlayIcon, englishPlayIcon, worshipPlayIcon;
+	ImageView surathPlayIcon, kurdishPlayIcon, alquddoosPlayIcon;
+	ImageView prayerPlayIcon, europePlayIcon;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.tab1);
 
-		one = (ImageView) findViewById(R.id.imageView1);
-		two = (ImageView) findViewById(R.id.imageView2);
-		three = (ImageView) findViewById(R.id.imageView3);
-		four = (ImageView) findViewById(R.id.imageView4);
-		five = (ImageView) findViewById(R.id.imageView5);
-		six = (ImageView) findViewById(R.id.imageView6);
-		seven = (ImageView) findViewById(R.id.imageView7);
-		eight = (ImageView) findViewById(R.id.imageView8);
-		nine = (ImageView) findViewById(R.id.imageView9);
-		ten = (ImageView) findViewById(R.id.imageView10);
-		eleven = (ImageView) findViewById(R.id.imageView11);
-		twelve = (ImageView) findViewById(R.id.imageView12);
+		arabicPlayIcon = (ImageView) findViewById(R.id.arabicPlayIcon);
+		englishPlayIcon = (ImageView) findViewById(R.id.englishPlayIcon);
+		worshipPlayIcon = (ImageView) findViewById(R.id.worshipPlayIcon);
+		surathPlayIcon = (ImageView) findViewById(R.id.surathPlayIcon);
+		kurdishPlayIcon = (ImageView) findViewById(R.id.kurdishPlayIcon);
+		alquddoosPlayIcon = (ImageView) findViewById(R.id.alquddoosPlayIcon);
+		prayerPlayIcon = (ImageView) findViewById(R.id.prayerPlayIcon);
+		europePlayIcon = (ImageView) findViewById(R.id.europePlayIcon);
 
-		one.setOnClickListener(new OnClickListener() {
+		arabicPlayIcon.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				try {
-					//media1 = new MediaPlayer();
-					if (isConnectingToInternet()) {
-						if(media1.isPlaying())
-							media1.stop();
-						media1.setAudioStreamType(AudioManager.USE_DEFAULT_STREAM_TYPE);
-						media1.setDataSource("http://live.abnsat.com/arabic.m3u8");
-						media1.prepare();
-						media1.start();
-						Toast.makeText(getApplicationContext(), "Playing...",
-								Toast.LENGTH_LONG).show();
-					} else {
-						Toast.makeText(getApplicationContext(),
-								"Please check your Internet Connection.",
-								Toast.LENGTH_SHORT).show();
-					}
-				} catch (Exception e) {
-				}
+				playVideo("http://rtmp-arabic.abnsat.com/live/arabic/playlist.m3u8", "Arabic");
 			}
 		});
 
-		three.setOnClickListener(new OnClickListener() {
+		englishPlayIcon.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				try {
-					//media3 = new MediaPlayer();
-
-					if (isConnectingToInternet()) {
-						if(media3.isPlaying())
-							media3.stop();
-						media3.setAudioStreamType(AudioManager.USE_DEFAULT_STREAM_TYPE);
-						media3.setDataSource("http://live.abnsat.com/trinity.m3u8");
-						media3.prepare();
-						media3.start();
-						Toast.makeText(getApplicationContext(), "Playing...",
-								Toast.LENGTH_LONG).show();
-					} else {
-						Toast.makeText(getApplicationContext(),
-								"Please check your Internet Connection.",
-								Toast.LENGTH_SHORT).show();
-					}
-				} catch (Exception e) {
-				}
+				playVideo("http://rtmp-trinity.abnsat.com/live/trinity/playlist.m3u8", "English");
 			}
 		});
 
-		five.setOnClickListener(new OnClickListener() {
+		worshipPlayIcon.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				try {
-					//media5 = new MediaPlayer();
-
-					if (isConnectingToInternet()) {
-						if(media5.isPlaying())
-							media5.stop();
-						media5.stop();
-						media5.setAudioStreamType(AudioManager.USE_DEFAULT_STREAM_TYPE);
-						media5.setDataSource("http://live.abnsat.com/worship.m3u8");
-						media5.prepare();
-						media5.start();
-						Toast.makeText(getApplicationContext(), "Playing...",
-								Toast.LENGTH_LONG).show();
-					} else {
-						Toast.makeText(getApplicationContext(),
-								"Please check your Internet Connection.",
-								Toast.LENGTH_SHORT).show();
-					}
-				} catch (Exception e) {
-				}
+				playVideo("http://rtmp-worship.abnsat.com/live/worship/playlist.m3u8", "Worship");
+			}
+		});
+		
+		surathPlayIcon.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				playVideo("http://rtmp-surath.abnsat.com/live/surath/playlist.m3u8", "Surath");
 			}
 		});
 
-		seven.setOnClickListener(new OnClickListener() {
+		kurdishPlayIcon.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				try {
-					//media7 = new MediaPlayer();
-
-					if (isConnectingToInternet()) {
-						if(media7.isPlaying())
-							media7.stop();
-						media7.setAudioStreamType(AudioManager.USE_DEFAULT_STREAM_TYPE);
-						media7.setDataSource("http://live.abnsat.com/surath.m3u8");
-						media7.prepare();
-						media7.start();
-						Toast.makeText(getApplicationContext(), "Playing...",
-								Toast.LENGTH_LONG).show();
-					} else {
-						Toast.makeText(getApplicationContext(),
-								"Please check your Internet Connection.",
-								Toast.LENGTH_SHORT).show();
-					}
-				} catch (Exception e) {
-					Log.e("aaa", "a"+e);
-				}
+				playVideo("http://rtmp-kurdish.abnsat.com/live/kurdish/playlist.m3u8", "Kurdish");
 			}
 		});
 
-		nine.setOnClickListener(new OnClickListener() {
+		alquddoosPlayIcon.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				try {
-					//media9 = new MediaPlayer();
-
-					if (isConnectingToInternet()) {
-						if(media9.isPlaying())
-							media9.stop();
-						media9.setAudioStreamType(AudioManager.USE_DEFAULT_STREAM_TYPE);
-						media9.setDataSource("http://live.abnsat.com/kurdish.m3u8");
-						media9.prepare();
-						media9.start();
-						Toast.makeText(getApplicationContext(), "Playing...",
-								Toast.LENGTH_LONG).show();
-					} else {
-						Toast.makeText(getApplicationContext(),
-								"Please check your Internet Connection.",
-								Toast.LENGTH_SHORT).show();
-					}
-				} catch (Exception e) {
-					Log.e("aaa", "a"+e);
-
-				}
+				playVideo("http://rtmp-alquddoos.abnsat.com/live/alquddoos/playlist.m3u8", "Al Quddoos");
+			}
+		});
+		
+		prayerPlayIcon.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				playVideo("http://rtmp-prayer.abnsat.com/live/prayer/playlist.m3u8", "Prayer");
 			}
 		});
 
-		eleven.setOnClickListener(new OnClickListener() {
+		europePlayIcon.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				try {
-					//media11 = new MediaPlayer();
-
-					if (isConnectingToInternet()) {
-						if(media11.isPlaying())
-							media11.stop();
-						media11.setAudioStreamType(AudioManager.USE_DEFAULT_STREAM_TYPE);
-						media11.setDataSource("http://live.abnsat.com/alquddoos.m3u8");
-						media11.prepare();
-						media11.start();
-						Toast.makeText(getApplicationContext(), "Playing...",
-								Toast.LENGTH_LONG).show();
-					} else {
-						Toast.makeText(getApplicationContext(),
-								"Please check your Internet Connection.",
-								Toast.LENGTH_SHORT).show();
-					}
-				} catch (Exception e) {
-				}
+				playVideo("http://rtmp-abnhotbird.abnsat.com/live/abnhotbird/playlist.m3u8", "Europe & Middle East");
 			}
 		});
-
-		two.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				if (isConnectingToInternet()) {
-					Intent inte = new Intent(getApplicationContext(),
-							PlayVideoDemo.class);
-					inte.putExtra(
-							"play",
-							"http://live.abnsat.com/arabic.m3u8");
-					inte.putExtra(
-							"name",
-							"Arabic Stream");
-					startActivity(inte);
-				} else {
-					Toast.makeText(getApplicationContext(),
-							"Please check your Internet Connection.",
-							Toast.LENGTH_SHORT).show();
-				}
-
-			}
-		});
-
-		four.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-
-				if (isConnectingToInternet()) {
-					Intent inte = new Intent(getApplicationContext(),
-							PlayVideo.class);
-					inte.putExtra(
-							"play",
-							"http://live.abnsat.com/trinity.m3u8");
-					inte.putExtra(
-							"name",
-							"English Stream");
-					startActivity(inte);
-				} else {
-					Toast.makeText(getApplicationContext(),
-							"Please check your Internet Connection.",
-							Toast.LENGTH_SHORT).show();
-				}
-			}
-		});
-
-		six.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				if (isConnectingToInternet()) {
-					Intent inte = new Intent(getApplicationContext(),
-							PlayVideo.class);
-					inte.putExtra(
-							"play",
-							"http://live.abnsat.com/worship.m3u8");
-					inte.putExtra(
-							"name",
-							"Worship Stream");
-					startActivity(inte);
-				} else {
-					Toast.makeText(getApplicationContext(),
-							"Please check your Internet Connection.",
-							Toast.LENGTH_SHORT).show();
-				}
-			}
-		});
-		eight.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				if (isConnectingToInternet()) {
-					Intent inte = new Intent(getApplicationContext(),
-							PlayVideo.class);
-					inte.putExtra("play",
-							"http://live.abnsat.com/surath.m3u8");
-					inte.putExtra(
-							"name",
-							"Surath Stream");
-					startActivity(inte);
-				} else {
-					Toast.makeText(getApplicationContext(),
-							"Please check your Internet Connection.",
-							Toast.LENGTH_SHORT).show();
-				}
-
-			}
-		});
-
-		ten.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				if (isConnectingToInternet()) {
-					Intent inte = new Intent(getApplicationContext(),
-							PlayVideo.class);
-					inte.putExtra("play",
-							"http://live.abnsat.com/kurdish.m3u8");
-					inte.putExtra(
-							"name",
-							"Kurdish Stream");
-					startActivity(inte);
-				} else {
-					Toast.makeText(getApplicationContext(),
-							"Please check your Internet Connection.",
-							Toast.LENGTH_SHORT).show();
-				}
-			}
-		});
-
-		twelve.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				if (isConnectingToInternet()) {
-					Intent inte = new Intent(getApplicationContext(),
-							PlayVideo.class);
-					inte.putExtra("play",
-							"http://live.abnsat.com/alquddoos.m3u8");
-					inte.putExtra("name",
-							"Al Quddoos Stream");
-					startActivity(inte);
-				} else {
-					Toast.makeText(getApplicationContext(),
-							"Please check your Internet Connection.",
-							Toast.LENGTH_SHORT).show();
-				}
-			}
-		});
-
-		/*
-		 * videoView1 = (VideoView)findViewById(R.id.videoView1);
-		 * videoView1.setVideoPath("http://surath.abnsat.com/surath/live.m3u8");
-		 * videoView1.start();
-		 */
-
-		// mPreview = (SurfaceView) findViewById(R.id.videoView1);
+		
 	}
 
 	public boolean isConnectingToInternet() {
@@ -351,41 +110,26 @@ public class Tab1 extends Activity {
 		}
 		return false;
 	}
-
-	@Override
-	protected void onStop() {
-		// TODO Auto-generated method stub
-		super.onStop();
-		if(media1.isPlaying())
-			media1.stop();
-		if(media3.isPlaying())
-			media3.stop();
-		if(media5.isPlaying())
-			media5.stop();
-		if(media7.isPlaying())
-			media7.stop();
-		if(media9.isPlaying())
-			media9.stop();
-		if(media11.isPlaying())
-			media11.stop();
+	
+	
+	
+	protected void playVideo(String url, String title) {
+		try {
+			if (isConnectingToInternet()) {
+				Intent inte = new Intent(getApplicationContext(), PlayVideo.class);
+				inte.putExtra("play", url);
+				inte.putExtra("name", title);
+				startActivity(inte);
+			} else {
+				Toast.makeText(getApplicationContext(), "Please check your Internet Connection.",
+						Toast.LENGTH_SHORT).show();
+			}
+		} catch (Exception e) {
+			Toast.makeText(getApplicationContext(), "Error playing video: " + e.getMessage(),
+					Toast.LENGTH_SHORT).show();
+		}
 	}
-	@Override
-	protected void onDestroy() {
-		// TODO Auto-generated method stub
-		super.onDestroy();
-		if(media1.isPlaying())
-			media1.stop();
-		if(media3.isPlaying())
-			media3.stop();
-		if(media5.isPlaying())
-			media5.stop();
-		if(media7.isPlaying())
-			media7.stop();
-		if(media9.isPlaying())
-			media9.stop();
-		if(media11.isPlaying())
-			media11.stop();
-	}
+	
 }
 
 /*

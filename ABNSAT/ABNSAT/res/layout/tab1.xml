@@ -71,14 +71,7 @@
                 <TableRow android:padding="10dp" >
 
                     <ImageView
-                        android:id="@+id/imageView1"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_weight="2"
-                        android:src="@drawable/audio" />
-
-                    <ImageView
-                        android:id="@+id/imageView2"
+                        android:id="@+id/arabicPlayIcon"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_weight="2"
@@ -99,14 +92,7 @@
                 <TableRow android:padding="10dp" >
 
                     <ImageView
-                        android:id="@+id/imageView3"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_weight="2"
-                        android:src="@drawable/audio" />
-
-                    <ImageView
-                        android:id="@+id/imageView4"
+                        android:id="@+id/englishPlayIcon"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_weight="2"
@@ -127,14 +113,7 @@
                 <TableRow android:padding="10dp" >
 
                     <ImageView
-                        android:id="@+id/imageView5"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_weight="2"
-                        android:src="@drawable/audio" />
-
-                    <ImageView
-                        android:id="@+id/imageView6"
+                        android:id="@+id/worshipPlayIcon"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_weight="2"
@@ -155,14 +134,7 @@
                 <TableRow android:padding="10dp" >
 
                     <ImageView
-                        android:id="@+id/imageView7"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_weight="2"
-                        android:src="@drawable/audio" />
-
-                    <ImageView
-                        android:id="@+id/imageView8"
+                        android:id="@+id/surathPlayIcon"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_weight="2"
@@ -183,14 +155,7 @@
                 <TableRow android:padding="10dp" >
 
                     <ImageView
-                        android:id="@+id/imageView9"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_weight="2"
-                        android:src="@drawable/audio" />
-
-                    <ImageView
-                        android:id="@+id/imageView10"
+                        android:id="@+id/kurdishPlayIcon"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_weight="2"
@@ -211,14 +176,7 @@
                 <TableRow android:padding="10dp" >
 
                     <ImageView
-                        android:id="@+id/imageView11"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_weight="2"
-                        android:src="@drawable/audio" />
-
-                    <ImageView
-                        android:id="@+id/imageView12"
+                        android:id="@+id/alquddoosPlayIcon"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_weight="2"
@@ -231,7 +189,49 @@
                         android:layout_gravity="center_vertical"
                         android:layout_weight="6"
                         android:paddingLeft="10dp"
-                        android:text="ALQUDDUS STREAM"
+                        android:text="ALQUDDOOS STREAM"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/black" />
+                </TableRow>
+                
+                <TableRow android:padding="10dp" >
+
+                    <ImageView
+                        android:id="@+id/prayerPlayIcon"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="2"
+                        android:src="@drawable/video" />
+
+                    <TextView
+                        android:id="@+id/prayerTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="6"
+                        android:paddingLeft="10dp"
+                        android:text="PRAYER STREAM"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/black" />
+                </TableRow>
+                
+                <TableRow android:padding="10dp" >
+
+                    <ImageView
+                        android:id="@+id/europePlayIcon"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="2"
+                        android:src="@drawable/video" />
+
+                    <TextView
+                        android:id="@+id/europeTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="6"
+                        android:paddingLeft="10dp"
+                        android:text="EUROPE &amp; MIDDLE EAST"
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:textColor="@color/black" />
                 </TableRow>
